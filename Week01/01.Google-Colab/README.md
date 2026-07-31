@@ -1,4 +1,4 @@
-# Week 01 — Python Development with Google Colab
+# ITEC102 - Week 01 — Python Development with Google Colab
 
 [Google Colab](https://colab.research.google.com/) is a free, cloud-based Jupyter Notebook environment that requires no local setup. It is a great choice for learning Python, running data science experiments, and collaborating with others.
 

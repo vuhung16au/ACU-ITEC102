@@ -1,8 +1,8 @@
-# Week 01 — Running Jupyter Notebook with Docker
+# ITEC102 - Week 01 — Running Jupyter Notebook with Docker
 
 [Docker](https://www.docker.com/) lets you run applications in isolated containers, ensuring a consistent environment across all machines. This guide shows you how to run a Jupyter Notebook server using Docker — no Python installation required on your host machine!
 
-# Screnshot(s)
+# Screenshot(s)
 
 ![docker + juputer](images/docker-jupyter.png)
 
@@ -62,6 +62,7 @@ Open a terminal, navigate to this folder, and run:
 
 ```bash
 docker compose up
+# not `docker compose up -d` because we want to see the logs in the terminal
 ```
 
 You will see output similar to:

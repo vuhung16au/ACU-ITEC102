@@ -1,4 +1,4 @@
-# Week 00 — Setting Up Your Development Environment
+# ITEC102 - Week 00 — Setting Up Your Development Environment
 
 Welcome to Week 00! Before writing any Python code, you need to set up your tools. Work through the guides below in order — each one builds on the previous.
 

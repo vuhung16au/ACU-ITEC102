@@ -1,4 +1,4 @@
-# Week 01 — Python Development with VS Code & Jupyter Notebook
+# ITEC102 - Week 01 — Python Development with VS Code & Jupyter Notebook
 
 [Visual Studio Code (VS Code)](https://code.visualstudio.com/) is a powerful, free code editor with excellent Python and Jupyter Notebook support. This guide will help you run Jupyter Notebooks locally on your machine.
 

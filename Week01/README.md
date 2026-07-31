@@ -1,4 +1,4 @@
-# Week 01 — Python Foundations & Development Environments
+# ITEC102 - Week 01 — Python Foundations & Development Environments
 
 This week is a refresher on Python fundamentals and an introduction to three popular Python development environments. Work through the sub-folders in order.
 
