@@ -1,4 +1,4 @@
-# Week 01 — Python Refresher via W3Schools
+# ITEC102 - Week 01 — Python Refresher via W3Schools
 
 Welcome to Week 1! This section provides a refresher on core Python concepts using [W3Schools](https://www.w3schools.com/python/). Work through each topic in order, running the examples in your preferred environment (Google Colab, VS Code, or Docker).
 
