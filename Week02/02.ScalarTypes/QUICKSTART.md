@@ -1,0 +1,1 @@
+# Quick Start\n\nRun `make run` to launch Jupyter.\nOpen `notebooks/scalar_types.ipynb`.\nTo clean up, run `make clean`.\n

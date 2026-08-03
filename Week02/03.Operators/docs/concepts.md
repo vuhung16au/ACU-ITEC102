@@ -1,0 +1,1 @@
+# Concepts\n\nOperators allow us to manipulate and compare data.\n\nRefer to the notebook for executable examples.\n
