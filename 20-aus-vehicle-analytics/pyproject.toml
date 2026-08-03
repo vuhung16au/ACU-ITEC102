@@ -1,0 +1,13 @@
+[project]
+name = "aus-vehicles"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ckanapi>=4.11",
+    "pandas>=3.0.5",
+    "plotly>=6.9.0",
+    "pyarrow>=25.0.0",
+    "streamlit>=1.59.1",
+]
