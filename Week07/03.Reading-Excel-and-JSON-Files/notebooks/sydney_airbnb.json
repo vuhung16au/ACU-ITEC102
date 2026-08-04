@@ -1,0 +1,17 @@
+[
+  {
+    "id":1,
+    "neighbourhood":"Bondi",
+    "price":150
+  },
+  {
+    "id":2,
+    "neighbourhood":"Manly",
+    "price":200
+  },
+  {
+    "id":3,
+    "neighbourhood":"Bondi",
+    "price":180
+  }
+]

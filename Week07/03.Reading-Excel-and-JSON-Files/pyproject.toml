@@ -1,0 +1,11 @@
+[project]
+name = "03-reading-excel-and-json-files"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jupyter>=1.1.1",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.5",
+]

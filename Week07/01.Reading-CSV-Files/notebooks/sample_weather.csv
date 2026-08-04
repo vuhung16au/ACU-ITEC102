@@ -1,0 +1,11 @@
+Date,City,Temperature,Rainfall
+2026-01-01,Sydney,28.5,0.0
+2026-01-02,Melbourne,22.1,5.2
+2026-01-03,Brisbane,31.0,0.0
+2026-01-04,Perth,35.5,0.0
+2026-01-05,Adelaide,25.0,1.5
+2026-01-06,Sydney,27.0,0.0
+2026-01-07,Melbourne,,10.5
+2026-01-08,Brisbane,30.5,0.0
+2026-01-09,Perth,34.0,0.0
+2026-01-10,Adelaide,26.5,2.0
