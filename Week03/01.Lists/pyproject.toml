@@ -1,0 +1,9 @@
+[project]
+name = "01-lists"
+version = "0.1.0"
+description = "Week 03 - 01.Lists"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jupyter>=1.1.1",
+]

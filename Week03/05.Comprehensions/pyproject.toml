@@ -1,0 +1,9 @@
+[project]
+name = "05-comprehensions"
+version = "0.1.0"
+description = "Week 03 - 05.Comprehensions"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jupyter>=1.1.1",
+]

@@ -1,0 +1,9 @@
+[project]
+name = "03-sets"
+version = "0.1.0"
+description = "Week 03 - 03.Sets"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jupyter>=1.1.1",
+]

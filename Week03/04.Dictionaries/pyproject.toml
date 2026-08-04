@@ -1,0 +1,9 @@
+[project]
+name = "04-dictionaries"
+version = "0.1.0"
+description = "Week 03 - 04.Dictionaries"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jupyter>=1.1.1",
+]
