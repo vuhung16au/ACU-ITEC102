@@ -8,5 +8,5 @@ dependencies = [
     "mlx",
     "polars==1.4.1",
     "numpy==2.0.1",
-    "pytest==8.3.2"
+    "pytest==9.0.3"
 ]
