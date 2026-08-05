@@ -86,6 +86,7 @@ Create the following files and directories within the new project folder:
     *   `make up`: to bring up the Docker containers (e.g., `docker compose up -d`).
     *   `make down`: to bring down the Docker containers (e.g., `docker compose down`).
     *   `make test` or `make e2e`: to run the minimum e2e tests.
+    *   `make clean`: to clean the project (e.g., remove `.venv`, Python cache directories like `__pycache__` and `.pytest_cache`, and Next.js/Node modules like `node_modules` and `.next`) to save space.
     *   *If Next.js*: Implement `make deploy` (alias to `make deploy-vercel`) to easily deploy the project on Vercel. Make sure the Next.js setup is Vercel-friendly.
 *   (if we have a database in the project) **`init-scripts/`**: SQL/NoSQL scripts with DDL and DML that automatically run on database startup. **Always initialize the database with synthetic sample/mock data.**
 *   **Tests**: Implement minimum end-to-end (e2e) tests to verify the core functionality.
