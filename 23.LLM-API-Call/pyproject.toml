@@ -1,0 +1,11 @@
+[project]
+name = "23-llm-api-call"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "openai>=2.53.0",
+    "pytest>=9.1.1",
+    "python-dotenv>=1.2.2",
+]
