@@ -1,10 +1,13 @@
-.PHONY: run test clean
+.PHONY: run test clean benchmark
 
 run:
 	uv run python src/main.py
 
 test:
 	uv run pytest tests/
+
+benchmark:
+	uv run python src/main.py --benchmark
 
 clean:
 	rm -rf .venv

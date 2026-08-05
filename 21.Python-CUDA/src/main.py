@@ -1,5 +1,6 @@
 import os
 import time
+import argparse
 
 # Enable cuDF Pandas accelerator
 # This allows standard pandas imports to run on the GPU where possible.
@@ -12,6 +13,38 @@ except ImportError:
 
 import pandas as pd
 import numpy as np
+
+def benchmark_cupy(mode="gpu", size=4000):
+    print(f"Running benchmark on {mode.upper()}...")
+    if mode == "gpu":
+        try:
+            import cupy as cp
+            # Warmup
+            a = cp.random.normal(size=(size, size))
+            b = cp.random.normal(size=(size, size))
+            cp.matmul(a, b)
+            
+            start_time = time.time()
+            for _ in range(10):
+                c = cp.matmul(a, b)
+                cp.cuda.Stream.null.synchronize()
+            end_time = time.time()
+        except ImportError:
+            print("CuPy not found. Make sure you are running in a CUDA environment.")
+            return float('inf')
+    else:
+        a = np.random.normal(size=(size, size))
+        b = np.random.normal(size=(size, size))
+        np.matmul(a, b)
+        
+        start_time = time.time()
+        for _ in range(10):
+            c = np.matmul(a, b)
+        end_time = time.time()
+        
+    duration = end_time - start_time
+    print(f"CUDA {mode.upper()} took: {duration:.4f} seconds")
+    return duration
 
 def generate_synthetic_data(num_rows=10_000_000):
     print(f"Generating synthetic Australian vehicle data ({num_rows} rows)...")
@@ -47,6 +80,24 @@ def analyze_data(df):
     return summary
 
 def main():
+    parser = argparse.ArgumentParser(description="CUDA GPU/CPU Benchmark")
+    parser.add_argument("--benchmark", action="store_true", help="Run benchmark comparing CPU and GPU")
+    args = parser.parse_args()
+
+    if args.benchmark:
+        print("=== Starting Benchmark ===")
+        cpu_time = benchmark_cupy("cpu")
+        gpu_time = benchmark_cupy("gpu")
+        
+        print("\n=== Benchmark Results ===")
+        print(f"CPU Time: {cpu_time:.4f}s")
+        print(f"GPU Time: {gpu_time:.4f}s")
+        if cpu_time > gpu_time:
+            print(f"GPU is {cpu_time / gpu_time:.2f}x faster than CPU")
+        else:
+            print(f"CPU is {gpu_time / cpu_time:.2f}x faster than GPU")
+        return
+
     try:
         import cupy as cp
         print("CuPy successfully imported. GPU is available.")
