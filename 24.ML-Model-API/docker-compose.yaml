@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  ml-api:
+    build: .
+    container_name: ml-api-24-ML-Model-API
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
