@@ -1,0 +1,18 @@
+[project]
+name = "gradient-boosting-example"
+version = "0.1.0"
+description = "A sample project demonstrating XGBoost and LightGBM for regression and classification"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "xgboost>=2.0.0",
+    "lightgbm>=4.0.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.3.0",
+    "requests>=2.31.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
