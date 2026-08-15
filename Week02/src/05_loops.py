@@ -4,6 +4,12 @@
 def main():
     # Using a for loop with range()
     print("Countdown starting...")
+
+    for i in range(5):
+        print(i)
+
+    print("------")        
+    
     for i in range(5, 0, -1):
         print(i)
     print("Blastoff!")

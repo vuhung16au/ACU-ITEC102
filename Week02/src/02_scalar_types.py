@@ -3,11 +3,23 @@
 
 def main():
     # Explicit Conversion (Casting)
+
+    price = 45.50
+
+    price = 45
+
+    # We can convert a float to an int, but it will lose the decimal part
     price_string = "45.50"
+
     # We cannot do math with text, so we convert it to a float
     price_float = float(price_string)
     total_with_tax = price_float * 1.10
-    print(f"Total with tax: ${total_with_tax:.2f}")
+
+    new_price = price_string * 10 
+
+    # print(f"Total with tax: ${total_with_tax:.2f}")
+
+    print(new_price)  # Outputs '45.5045.5045.5045.5045.5045.5045.5045.5045.50' because it's string multiplication
 
     # Implicit Conversion
     # Python automatically converts an int and a float into a float

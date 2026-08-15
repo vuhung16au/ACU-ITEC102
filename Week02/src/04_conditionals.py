@@ -7,8 +7,11 @@ def main():
 
     if score >= 85:
         grade = "High Distinction"
+        # print("Excellent work!")
+        # print(f"Your grade is: {grade}")
     elif score >= 75:
         grade = "Distinction"
+        # print("Good job!")
     elif score >= 65:
         grade = "Credit"
     elif score >= 50:
@@ -24,6 +27,9 @@ def main():
     color = "blue"
     if color.lower() == 'blue':
         print('The sky is blue')
+        Z = color.upper()  # Converts the string to uppercase, but doesn't change the original variable
+        # color.
+        print(Z)
     else:
         print('Nice color!')
 

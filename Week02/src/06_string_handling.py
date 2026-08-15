@@ -2,6 +2,17 @@
 # Slicing, formatting, and escape sequences.
 
 def main():
+
+    str1 = "Hello, World!"
+    str2 = 'Python is fun.'
+
+    print(str1)
+    print(str2)
+
+    str3 = str1 + " " + str2  # Concatenation
+
+    print(str3)
+
     # String Slicing: string[start:stop]
     course_code = "ITEC102-Python"
     print("Unit prefix:", course_code[0:7]) # Output: ITEC102

@@ -14,10 +14,11 @@ def main():
     print("This line is outside the if block and will always run.")
 
     # Exercise 1 Solution:
-    temperature = 25
+    temperature = 0
     if temperature > 20:
         print('It is warm')
-
+    elif temperature < 10:
+        print('It is cold')
 
     # --- ENRICHMENT ---
     # Type Hinting and PEP 8

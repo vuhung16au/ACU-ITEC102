@@ -6,7 +6,9 @@ def main():
     number = 14
     if number % 2 == 0:
         print("The number is even.")
-
+    else:
+        print("The number is odd.")
+    
     # Logical Operators
     is_weekend = True
     is_sunny = False
