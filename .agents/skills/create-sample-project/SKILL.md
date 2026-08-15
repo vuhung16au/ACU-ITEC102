@@ -10,7 +10,7 @@ This skill automates the creation of a new, standalone example project for the A
 ## Inputs Required from User
 
 When the user invokes this skill, ensure you have the following information:
-1. **Project Number**: The numeric prefix for the project folder (e.g., `01`, `02`). If the user does not provide one, you should analyze the root directory to find the next available project number, or default to `01` if none exist.
+1. **Project Number**: The numeric prefix for the project folder (e.g., `01`, `02`, `28`). If the user does not provide one, you should analyze the existing directory structure (e.g., inside `Enrichment/` and its subfolders) to find the next available project number, or default to `01` if none exist.
 2. **Objective (Learning Outcome)**: A description of what the project will showcase (e.g., "Create a dashboard for Australian vehicles, including plotting charts showing trends of new registrations by states and territories, and average age of vehicles by fuel type").
 
 If the user does not provide the objective, ask them for the missing information before proceeding.
@@ -54,6 +54,12 @@ For package mangement, we prefer:
 
 Because this unit ITEC102 is an introductory programming course about Python for data science, you can also introduce scikit-learn, Pytorch, or TensorFlow if the learning objective is about machine learning or deep learning. But avoid using these libraries too deep, just use them to demonstrate the learning objective.
 
+### Data Sources Preferences
+
+When a project requires data:
+- **Real Data**: Prefer to fetch datasets from [data.gov.au](https://data.gov.au/) using the CKAN API. This exposes students to real-world data fetching and manipulation.
+- **Synthetic Data**: Always provide Australian-themed mock datasets (which you will generate) as a fallback mechanism. This ensures that users can run the enrichment projects offline without relying on online data from data.gov.au, or if they simply prefer a simpler starting point.
+
 ## Execution Steps
 
 ### Create `<root>/AGENTS.md` and says 
@@ -64,10 +70,12 @@ Because this unit ITEC102 is an introductory programming course about Python for
 - While maintaining the code quality and readability, the projects should be designed to be simple and easy to understand. Avoid using complex frameworks or design patterns unless they are necessary for the learning objective. The projects should be structured in a way that is easy for students to follow, with clear separation of concerns and modular design.
 - All folders/projects should have a `README.md` file that provides an overview of the project, and `QUICKSTART.md` file that provides step-by-step instructions on how to run, connect to, and interact with the project. 
 
-### 1. Determine Folder Name
+### 1. Determine Folder Name and Location
 
 *   Generate a concise, short name for the project based on the user's objective. (e.g., "querying a sqlite database and show it on a web browser" becomes `Sqlite-RawQuery` or `Sqlite-WebBrowser`).
-*   Combine the project number and short name to form the new folder path at the root of the workspace: `<Project Number>.<ProjectShortName>` (e.g., `01.Sqlite-RawQuery`).
+*   Decide where to place the newly created sample project based on its topic. While core weekly projects might go into `WeekXX` folders, advanced or additional examples should go into the `Enrichment/` folder.
+*   **Folder Creation**: You have the autonomy to create new folders, categories, and sub-folders (e.g., `Enrichment/Data-Engineering/`, `Enrichment/Machine-Learning/`, etc.) based on the project's topic to keep the repository well-organized.
+*   Combine the project number and short name to form the new folder path within the determined category: `<Category Path>/<Project Number>.<ProjectShortName>` (e.g., `Enrichment/Data-Engineering/28.Sqlite-RawQuery`).
 
 ### 2. Scaffold the Project Structure
 
