@@ -16,8 +16,9 @@ def main():
     # coordinates[0] = 15.0  # This would raise a TypeError
     
     # Unpacking a tuple
-    lat, lon = (40.7128, -74.0060)
-    print(f"New York - Latitude: {lat}, Longitude: {lon}")
+    # lattitude, longitude = coordinates
+    lat, lon = (-33.856608, 151.215272)
+    print(f"Opera House - Latitude: {lat}, Longitude: {lon}")
     
     # Returning multiple values from a function using tuples
     def get_user_info():

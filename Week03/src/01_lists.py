@@ -6,7 +6,11 @@ def main():
     print("--- Lists ---")
     # Creating a list
     fruits = ["apple", "banana", "cherry"]
+
+    print("-------------------")
     print(f"Original list: {fruits}")
+    print("-------------------")
+    print(fruits)
 
     # Accessing elements (Ordered)
     print(f"First fruit: {fruits[0]}")
