@@ -1,0 +1,17 @@
+[project]
+name = "web-scraping-etl"
+version = "0.1.0"
+description = "ETL pipeline for Electric Vehicle Charging Stations"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2.0",
+    "requests>=2.31.0",
+    "psycopg2-binary>=2.9.9",
+    "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0"
+]
