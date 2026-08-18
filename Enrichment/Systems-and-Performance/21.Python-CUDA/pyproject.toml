@@ -9,5 +9,5 @@ dependencies = [
     "cudf-cu12==24.8.1",
     "pandas==2.2.2",
     "numpy==1.26.4",
-    "pytest==8.3.2"
+    "pytest==9.0.3"
 ]
