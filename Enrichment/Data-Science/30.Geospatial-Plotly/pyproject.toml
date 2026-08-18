@@ -1,0 +1,12 @@
+[project]
+name = "geospatial-plotly"
+version = "0.1.0"
+description = "A Streamlit web application to visualize Geospatial data using Plotly Mapbox"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.38.0",
+    "pandas>=2.2.0",
+    "plotly>=5.20.0",
+    "requests>=2.32.0",
+    "pytest>=8.0.0",
+]
