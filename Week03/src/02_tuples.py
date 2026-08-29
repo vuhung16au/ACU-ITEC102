@@ -25,6 +25,16 @@ def main():
         return ("Alice", 25, "developer")
         
     name, age, profession = get_user_info()
+
+    result1 = get_user_info()
+
+    print("-------- TODO ----- ---")
+    print(f"User Info result1: {result1}")
+
+    result1 = 1; 
+    print("----- TODO 2----- ")
+    print((result1, type(result1)))
+
     print(f"User: {name}, Age: {age}, Profession: {profession}")
 
 if __name__ == "__main__":

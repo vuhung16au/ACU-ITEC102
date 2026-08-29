@@ -4,8 +4,23 @@
 
 def main():
     print("--- Lists ---")
+
     # Creating a list
     fruits = ["apple", "banana", "cherry"]
+
+    # A list of random numbers from 1 to 10 include 3 items 
+    random_numbers = [5, 2, 8]
+
+    # Try some operation on list, including indexing, slicing, appending, removing, and iterating
+    print(f"Random numbers: {random_numbers}")
+    print(random_numbers)
+
+    print(f"First random number: {random_numbers[0]}")
+    print(f"Last random number: {random_numbers[-1]}")
+    print(f"Slice of random numbers: {random_numbers[1:3]}")
+
+    # Print the last element for "random_numbers" using negative indexing
+    print(f"Last random number (using negative indexing): {random_numbers[-1]}")
 
     print("-------------------")
     print(f"Original list: {fruits}")
@@ -18,7 +33,16 @@ def main():
     # Modifying elements (Mutable)
     fruits[1] = "blueberry"
     print(f"Modified list: {fruits}")
-    
+
+
+    # Delete the first element of the list fruits 
+    del fruits[0]
+    print(f"List after deleting first element: {fruits}")
+
+    # Add new elements to the list fruits to the end of the list using append() method
+    fruits.append("kiwi")
+    print(f"List after adding a new element: {fruits}")
+
     # Adding and removing elements
     fruits.append("orange")
     fruits.remove("apple")
@@ -41,7 +65,7 @@ def main():
     # View cart contents
     print("Items in your cart:")
     for i, item in enumerate(shopping_cart, 1):
-        print(f"{i}. {item}")
+        print(f"{i}.{item}")
 
 if __name__ == "__main__":
     main()
