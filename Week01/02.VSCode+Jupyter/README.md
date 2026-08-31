@@ -93,3 +93,7 @@ project/
 - [Working with Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
 - [Python Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Jupyter Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+
+## Structure
+- `notebooks/`: Interactive demonstrations and exercises.
+- `src/`: Standard Python script equivalents of the concepts. (Students can use either the Jupyter notebook or the .py script)

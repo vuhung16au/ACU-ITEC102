@@ -7,7 +7,7 @@ import numpy as np
 scores = np.array([45, 92, 55, 30, 88])
 
 # Use the `np.where()` function to assign 'Pass' or 'Fail' based on the scores
-grades = np.where(scores >= 50, 'Pass', 'Fail')
+grades = np.where(scores >= 50, "Pass", "Fail")
 
 # Print the final results
 print(f"Final Results: {grades}")

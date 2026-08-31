@@ -11,5 +11,7 @@ print(doubled_prices)
 # Alternative using a regular function
 def double_price(price):
     return price * 2
+
+
 printed_prices = list(map(double_price, prices))
 print(printed_prices)

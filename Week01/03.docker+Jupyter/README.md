@@ -118,3 +118,7 @@ docker compose down
 - [Jupyter Docker Stacks Documentation](https://jupyter-docker-stacks.readthedocs.io/)
 - [Docker Compose Reference](https://docs.docker.com/compose/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+## Structure
+- `notebooks/`: Interactive demonstrations and exercises.
+- `src/`: Standard Python script equivalents of the concepts. (Students can use either the Jupyter notebook or the .py script)

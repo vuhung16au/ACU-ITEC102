@@ -156,3 +156,7 @@ print(f"Average score: {average:.2f}")
 
 - [W3Schools Python Tutorial (Full)](https://www.w3schools.com/python/)
 - [Python Official Docs](https://docs.python.org/3/)
+
+## Structure
+- `notebooks/`: Interactive demonstrations and exercises.
+- `src/`: Standard Python script equivalents of the concepts. (Students can use either the Jupyter notebook or the .py script)

@@ -21,3 +21,11 @@ To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, an
 ```bash
 make clean
 ```
+
+## Install Dependencies
+
+To install the dependencies listed in `pyproject.toml`:
+```bash
+uv install
+```
+

@@ -89,3 +89,7 @@ Hello ITEC102
 - [Google Colab FAQ](https://research.google.com/colaboratory/faq.html)
 - [Colab Tips and Tricks](https://colab.research.google.com/notebooks/basic_features_overview.ipynb)
 
+
+## Structure
+- `notebooks/`: Interactive demonstrations and exercises.
+- `src/`: Standard Python script equivalents of the concepts. (Students can use either the Jupyter notebook or the .py script)

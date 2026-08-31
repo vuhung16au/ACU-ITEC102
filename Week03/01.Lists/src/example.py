@@ -1,5 +1,6 @@
 # Lists: Ordered, Mutable Data
 
+
 def main():
     # Creating and modifying a list
     aussie_cities = ["Sydney", "Melbourne", "Brisbane"]
@@ -16,6 +17,7 @@ def main():
     # Sorting alphabetically
     aussie_cities.sort()
     print(f"My travel itinerary: {aussie_cities}")
+
 
 if __name__ == "__main__":
     main()
