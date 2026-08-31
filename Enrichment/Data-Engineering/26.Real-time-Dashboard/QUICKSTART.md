@@ -1,36 +1,23 @@
-# Quickstart: Real-time Dashboard
+# Quickstart
 
-Follow these instructions to run the Streamlit dashboard.
+This folder uses `uv` for dependency management and `make` for executing common tasks.
 
-## Prerequisites
-- Docker and Docker Compose installed.
-- (Optional) `uv` installed to run Python tests locally.
-
-## Running the Dashboard
-
-To start the Streamlit application in a Docker container, run:
-
+## Running the Notebook
+To launch the Jupyter notebook locally:
 ```bash
-make up
+make run
 ```
+*(This runs `uv run jupyter notebook notebooks/` to start the environment)*
 
-This will build the Docker image and start the container. The application will be accessible at:
-[http://localhost:8501](http://localhost:8501)
-
-You can interact with the sidebar dropdowns to filter the flight data by origin and destination airports. The metrics and charts will update instantly thanks to DuckDB's fast execution.
-
-## Running Tests
-
-To verify the DuckDB data connection locally:
-
+## Testing the Notebook
+To execute all cells in the notebook headlessly and ensure there are no errors:
 ```bash
-make test
+uv run jupyter nbconvert --execute --to notebook --inplace notebooks/*.ipynb
 ```
+*(This is useful for verifying your code works before submitting)*
 
-## Stopping the Application
-
-To stop the containers, run:
-
+## Cleaning up
+To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, and caches:
 ```bash
-make down
+make clean
 ```

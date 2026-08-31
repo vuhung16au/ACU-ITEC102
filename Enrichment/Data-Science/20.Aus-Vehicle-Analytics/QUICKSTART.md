@@ -1,33 +1,23 @@
-# Quick Start
+# Quickstart
 
-Follow these steps to set up and run the Aus-Vehicles Dashboard locally.
+This folder uses `uv` for dependency management and `make` for executing common tasks.
 
-## Prerequisites
-- Make sure you have `uv` and `make` installed on your machine.
-
-## 1. Install Dependencies
-Run the following command to sync the project dependencies:
-```bash
-make build
-```
-
-## 2. Fetch and Process Data
-Download the data from the CKAN API and process it for the dashboard:
-```bash
-make data
-```
-This single command fetches the raw data (saving to `data/raw/vehicle_data.csv`) and processes it (saving to `data/processed/vehicle_data_clean.parquet`).
-
-*(Alternatively, you can run `make fetch` and `make process` separately).*
-
-## 3. Run the Dashboard
-Launch the Streamlit app:
+## Running the Notebook
+To launch the Jupyter notebook locally:
 ```bash
 make run
 ```
+*(This runs `uv run jupyter notebook notebooks/` to start the environment)*
 
-## Cleaning Up
-To reset your environment and delete downloaded data, run:
+## Testing the Notebook
+To execute all cells in the notebook headlessly and ensure there are no errors:
+```bash
+uv run jupyter nbconvert --execute --to notebook --inplace notebooks/*.ipynb
+```
+*(This is useful for verifying your code works before submitting)*
+
+## Cleaning up
+To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, and caches:
 ```bash
 make clean
 ```

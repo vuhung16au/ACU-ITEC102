@@ -1,54 +1,23 @@
-# Quickstart: ML Model API
+# Quickstart
 
-Follow these instructions to run and test the API.
+This folder uses `uv` for dependency management and `make` for executing common tasks.
 
-## Prerequisites
-- Docker and Docker Compose installed.
-- (Optional) `uv` installed for local testing.
-
-## Running the Application
-
-To start the API in a Docker container, run:
-
+## Running the Notebook
+To launch the Jupyter notebook locally:
 ```bash
-make up
+make run
 ```
+*(This runs `uv run jupyter notebook notebooks/` to start the environment)*
 
-This will build the Docker image and start the container on port `8000`. Wait a few moments for the model to train upon the first startup.
-
-## Interacting with the API
-
-You can access the auto-generated API documentation (Swagger UI) by navigating to:
-[http://localhost:8000/docs](http://localhost:8000/docs)
-
-From there, you can test the `/predict` endpoint interactively.
-
-Alternatively, test it via `curl`:
+## Testing the Notebook
+To execute all cells in the notebook headlessly and ensure there are no errors:
 ```bash
-curl -X 'POST' \
-  'http://localhost:8000/predict' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "Make": "Toyota",
-  "Engine_Size_L": 2.5,
-  "Fuel_Type": "Hybrid",
-  "Fuel_Consumption_L_100km": 5.0
-}'
+uv run jupyter nbconvert --execute --to notebook --inplace notebooks/*.ipynb
 ```
+*(This is useful for verifying your code works before submitting)*
 
-## Running Tests
-
-If you have `uv` and Python installed, you can run the unit tests locally:
-
+## Cleaning up
+To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, and caches:
 ```bash
-make test
-```
-
-## Stopping the Application
-
-To stop the containers, run:
-
-```bash
-make down
+make clean
 ```

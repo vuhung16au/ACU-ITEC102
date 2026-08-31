@@ -1,21 +1,23 @@
-# Quickstart: Python on Metal
+# Quickstart
 
-This project runs natively on macOS (Apple Silicon). We skip Docker in this project because Docker Desktop for Mac cannot directly pass the Metal GPU into Linux containers. Running it natively ensures you fully leverage the M-Series GPU and unified memory architecture.
+This folder uses `uv` for dependency management and `make` for executing common tasks.
 
-## Running the Project
+## Running the Notebook
+To launch the Jupyter notebook locally:
+```bash
+make run
+```
+*(This runs `uv run jupyter notebook notebooks/` to start the environment)*
 
-1. **Prerequisites**
-   Ensure you have `uv` (the fast Python package installer) installed.
+## Testing the Notebook
+To execute all cells in the notebook headlessly and ensure there are no errors:
+```bash
+uv run jupyter nbconvert --execute --to notebook --inplace notebooks/*.ipynb
+```
+*(This is useful for verifying your code works before submitting)*
 
-2. **Execute the Code**
-   Open your terminal and run:
-   ```bash
-   make run
-   ```
-   This will use `uv` to automatically install the fixed dependencies (`mlx`, `polars`) and run the script on your Mac.
-
-3. **Run Tests**
-   To verify the setup with tests:
-   ```bash
-   make test
-   ```
+## Cleaning up
+To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, and caches:
+```bash
+make clean
+```

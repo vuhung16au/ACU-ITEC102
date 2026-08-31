@@ -1,33 +1,23 @@
-# Quickstart Guide
+# Quickstart
 
-Follow these steps to run the Geospatial Data Visualizer on your local machine.
+This folder uses `uv` for dependency management and `make` for executing common tasks.
 
-## Prerequisites
-- `uv` (Fast Python package and project manager)
-- Python 3.10+
-
-## 1. Setup and Run
-This project uses `uv` to manage dependencies. You don't need to manually create a virtual environment; `uv run` handles it automatically based on the `pyproject.toml` file.
-
-Open your terminal, navigate to this project folder, and run:
-
+## Running the Notebook
+To launch the Jupyter notebook locally:
 ```bash
 make run
 ```
-*(This executes `uv run streamlit run app.py` behind the scenes).*
+*(This runs `uv run jupyter notebook notebooks/` to start the environment)*
 
-Streamlit will automatically open your default web browser and navigate to `http://localhost:8501`.
-
-## 2. Running Tests
-To run the automated tests that verify data handling logic against the local mock data:
-
+## Testing the Notebook
+To execute all cells in the notebook headlessly and ensure there are no errors:
 ```bash
-make test
+uv run jupyter nbconvert --execute --to notebook --inplace notebooks/*.ipynb
 ```
+*(This is useful for verifying your code works before submitting)*
 
-## 3. Cleaning Up
-To remove the generated virtual environment and cache files:
-
+## Cleaning up
+To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, and caches:
 ```bash
 make clean
 ```

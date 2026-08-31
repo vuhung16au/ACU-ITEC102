@@ -1,29 +1,23 @@
-# Quickstart Guide
+# Quickstart
 
-Follow these steps to run the LLM API Call script.
+This folder uses `uv` for dependency management and `make` for executing common tasks.
 
-## 1. Prerequisites
-Ensure you have `uv` and Python installed on your system.
-
-## 2. Environment Setup
-The API key is required to authenticate with the AI Box API endpoint.
-We already created a `.env.local` file for you with the following content:
-
-```env
-AI_BOX_API_KEY=sk-your-api-key
-```
-
-## 3. Running the Application
-The `Makefile` simplifies running the script.
-
-To execute the application:
+## Running the Notebook
+To launch the Jupyter notebook locally:
 ```bash
 make run
 ```
-This command uses `uv` to run `main.py` securely, ensuring all dependencies are handled.
+*(This runs `uv run jupyter notebook notebooks/` to start the environment)*
 
-## 4. Running the Tests
-To ensure everything is working correctly, you can run the minimal end-to-end tests provided:
+## Testing the Notebook
+To execute all cells in the notebook headlessly and ensure there are no errors:
 ```bash
-make test
+uv run jupyter nbconvert --execute --to notebook --inplace notebooks/*.ipynb
+```
+*(This is useful for verifying your code works before submitting)*
+
+## Cleaning up
+To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, and caches:
+```bash
+make clean
 ```

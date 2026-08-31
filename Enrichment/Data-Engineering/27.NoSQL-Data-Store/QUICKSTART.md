@@ -1,49 +1,23 @@
-# Quickstart: NoSQL Data Store
+# Quickstart
 
-Follow these instructions to run the FastAPI application, MongoDB instance, and Mongo Express UI.
+This folder uses `uv` for dependency management and `make` for executing common tasks.
 
-## Prerequisites
-- Docker and Docker Compose installed.
-- (Optional) `uv` installed to run Python tests locally.
-
-## Running the Application
-
-To start MongoDB, Mongo Express, and the FastAPI application, run:
-
+## Running the Notebook
+To launch the Jupyter notebook locally:
 ```bash
-make up
+make run
 ```
+*(This runs `uv run jupyter notebook notebooks/` to start the environment)*
 
-This will spin up three containers:
-1. **MongoDB**: The core database running on port `27017`.
-2. **Mongo Express**: A web-based administrative UI for MongoDB.
-3. **FastAPI**: The REST API.
-
-## Interacting with the Services
-
-1. **FastAPI Swagger UI**:
-   - Open your browser to [http://localhost:8002/docs](http://localhost:8002/docs)
-   - You can test the endpoints (`/toilets`, `/toilets/accessible`, etc.) directly from this UI.
-
-2. **Mongo Express**:
-   - Open your browser to [http://localhost:8081](http://localhost:8081)
-   - **Login**:
-     - Username: `admin`
-     - Password: `adminpassword`
-   - You can browse the `nosql_db` database and the `toilets` collection to see the raw JSON documents.
-
-## Running Tests
-
-To verify the FastAPI logic locally without relying on the database:
-
+## Testing the Notebook
+To execute all cells in the notebook headlessly and ensure there are no errors:
 ```bash
-make test
+uv run jupyter nbconvert --execute --to notebook --inplace notebooks/*.ipynb
 ```
+*(This is useful for verifying your code works before submitting)*
 
-## Stopping the Application
-
-To stop all containers, run:
-
+## Cleaning up
+To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, and caches:
 ```bash
-make down
+make clean
 ```
