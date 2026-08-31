@@ -34,6 +34,18 @@ Install **Docker Desktop** and use `docker compose` to run Python scripts and Ju
 
 Use [Google Colab](https://colab.research.google.com/) as a free, cloud-based Jupyter environment with all major libraries pre-installed. Covers the recommended **GitHub + Colab** workflow for version control and collaboration, and notes [Kaggle Notebooks](https://www.kaggle.com/code) as a useful alternative.
 
+### [`07.uv.md`](./07.uv.md) — Running Projects with `uv`
+
+Learn how to use `uv run` to easily execute Python scripts. This automatically uses your `pyproject.toml` file to install dependencies and run the file in an isolated virtual environment.
+
+### [`08.pip.md`](./08.pip.md) — Running Projects with `pip` and `python`
+
+Learn how to manually install project dependencies using `pip3 install` and run your scripts using the standard `python3` command.
+
+### [`09.Python.venv.md`](./09.Python.venv.md) — Why and How to use `venv`
+
+A quick, practical example of how to create and activate a Python virtual environment to isolate your packages from the global system, including how to run `.py` and `.ipynb` files with it.
+
 ---
 
 ## Verification Checklist
