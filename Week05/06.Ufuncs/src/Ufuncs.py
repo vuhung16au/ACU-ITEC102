@@ -7,7 +7,7 @@ import numpy as np
 scores = np.array([45, 92, 55, 30, 88])
 
 # Use the `np.where()` function to assign 'Pass' or 'Fail' based on the scores
-grades = np.where(scores >= 50, "Pass", "Fail")
+grades = np.where(scores >= 50, 'Pass', 'Fail')
 
 # Print the final results
 print(f"Final Results: {grades}")
@@ -20,7 +20,7 @@ print(f"Final Results: {grades}")
 # print(f"Mean score: {np.mean(scores)}")
 # print(f"Median score: {np.median(scores)}")
 # print(f"Standard deviation: {np.std(scores)}")
-
+c
 # TODO: Use np.add(), np.subtract(), np.multiply(), and np.divide() on two arrays of your choice and print the results.
 # arr1 = np.array([1, 2, 3, 4, 5])
 # arr2 = np.array([6, 7, 8, 9, 10])

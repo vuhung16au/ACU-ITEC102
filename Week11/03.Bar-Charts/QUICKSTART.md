@@ -21,3 +21,10 @@ To remove the virtual environment (`.venv`), Jupyter checkpoints, lock files, an
 ```bash
 make clean
 ```
+
+## Running the Python Script
+From this folder, run:
+```bash
+uv run src/BarCharts.py
+```
+`uv` creates the project environment and installs the required dependencies automatically when needed.

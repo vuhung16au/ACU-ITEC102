@@ -2,6 +2,13 @@
 
 This folder uses `uv` for dependency management and `make` for executing common tasks.
 
+## Running the Python Script
+From this folder, run:
+```bash
+uv run src/IntroductionandSeries.py
+```
+`uv` creates the project environment and installs the required dependencies automatically when needed.
+
 ## Running the Notebook
 To launch the Jupyter notebook locally:
 ```bash

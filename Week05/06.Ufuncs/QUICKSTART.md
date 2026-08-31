@@ -29,3 +29,10 @@ To install the dependencies listed in `pyproject.toml`:
 uv install
 ```
 
+
+## Running the Python Script
+From this folder, run:
+```bash
+uv run src/Ufuncs.py
+```
+`uv` creates the project environment and installs the required dependencies automatically when needed.
