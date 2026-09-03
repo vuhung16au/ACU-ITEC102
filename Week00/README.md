@@ -42,10 +42,6 @@ Learn how to use `uv run` to easily execute Python scripts. This automatically u
 
 Learn how to manually install project dependencies using `pip3 install` and run your scripts using the standard `python3` command.
 
-### [`09.Python.venv.md`](./09.Python.venv.md) — Why and How to use `venv`
-
-A quick, practical example of how to create and activate a Python virtual environment to isolate your packages from the global system, including how to run `.py` and `.ipynb` files with it.
-
 ---
 
 ## Verification Checklist
