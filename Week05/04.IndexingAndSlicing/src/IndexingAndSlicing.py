@@ -27,7 +27,7 @@ print(f"First column: {first_column}")
 # Expected Output: Top-left: 1, First column: [1 4 7]
 
 # Print the first row
-first_row = table[0, :]
+first_row = table[0:1, :]
 print(f"First row: {first_row}")
 
 # Expected Output: First row: [1 2 3]
