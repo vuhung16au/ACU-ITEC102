@@ -1,17 +1,42 @@
 [
   {
-    "id":1,
-    "neighbourhood":"Bondi",
-    "price":150
+    "id": 101,
+    "name": "Sunny Beachside Apartment",
+    "neighbourhood": "Bondi",
+    "room_type": "Entire home/apt",
+    "price": 185,
+    "rating": 4.9
   },
   {
-    "id":2,
-    "neighbourhood":"Manly",
-    "price":200
+    "id": 102,
+    "name": "Manly Ferry Studio",
+    "neighbourhood": "Manly",
+    "room_type": "Entire home/apt",
+    "price": 210,
+    "rating": 4.8
   },
   {
-    "id":3,
-    "neighbourhood":"Bondi",
-    "price":180
+    "id": 103,
+    "name": "Cozy Surry Hills Loft",
+    "neighbourhood": "Surry Hills",
+    "room_type": "Private room",
+    "price": 120,
+    "rating": 4.7
+  },
+  {
+    "id": 104,
+    "name": "Bondi Coastal Retreat",
+    "neighbourhood": "Bondi",
+    "room_type": "Entire home/apt",
+    "price": 240,
+    "rating": 4.95
+  },
+  {
+    "id": 105,
+    "name": "Modern Parramatta CBD Unit",
+    "neighbourhood": "Parramatta",
+    "room_type": "Entire home/apt",
+    "price": 140,
+    "rating": 4.6
   }
 ]
