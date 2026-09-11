@@ -1,148 +1,182 @@
 # Quickstart Guide
 
-Welcome to the ITEC102 Python Projects repository! This guide will help you set up your Python environment and show you how to run the code and notebooks in this repository.
+Welcome to the **ITEC102 Python Projects** repository!
 
-## 1. Setting up a Python Virtual Environment
+In this course, we use **`make`** to automate project setup, dependency management, code execution, and quality checks.
 
-A virtual environment keeps your project's dependencies (like installed libraries) separate from other Python projects on your computer. This ensures everything runs smoothly without conflicts.
-
-### Step 1: Create the Virtual Environment
-Open your terminal (or Command Prompt/PowerShell on Windows), make sure you are in the root folder of this repository (`ACU-ITEC102`), and run the following command:
-
-**On macOS and Linux:**
-```bash
-python3 -m venv venv
-```
-
-**On Windows:**
-```bash
-python -m venv venv
-```
-
-### Step 2: Activate the Virtual Environment
-You need to activate the environment every time you open a new terminal to work on the project.
-
-**On macOS and Linux:**
-```bash
-source venv/bin/activate
-```
-
-**On Windows:**
-```bash
-venv\Scripts\activate
-```
-
-You will know it is activated successfully when you see `(venv)` at the beginning of your command prompt.
-
-### Step 3: Install Required Packages
-Once activated, install Jupyter and any other required libraries so you can run the notebooks:
-```bash
-pip install jupyterlab ipykernel
-```
-*(Note: If the repository later includes a `requirements.txt` file, you can install all dependencies at once by running `pip install -r requirements.txt`)*
+Instead of running lengthy and error-prone "raw" Python commands (such as manually creating virtual environments, activating platform-specific shell scripts, installing libraries with pip, or typing long file paths), `make` provides simple, consistent commands that automate these tasks for you.
 
 ---
 
-## 2. Running Jupyter Notebooks
+## 1. Prerequisites
 
-Many lessons and exercises in this repository are provided as Jupyter Notebooks (`.ipynb` files). To open and run them using your virtual environment:
+Before running commands, ensure you have:
 
-1. Make sure your virtual environment is activated (see Step 2 above).
-2. Register your virtual environment so Jupyter knows to use it:
-   ```bash
-   python -m ipykernel install --user --name=venv --display-name "Python (ITEC102 venv)"
-   ```
-3. Start the Jupyter Notebook server:
-   ```bash
-   jupyter notebook
-   ```
-   *(Alternatively, you can use `jupyter lab`)*
-4. Your web browser will automatically open. Navigate to the folder containing the notebook you want to view and click on it.
-5. In the top right corner of the notebook, make sure the kernel is set to **Python (ITEC102 venv)**. If it isn't, you can change it by going to **Kernel -> Change Kernel -> Python (ITEC102 venv)**.
-
----
-
-## 3. Running Python Scripts
-
-Each week's topic is organized into folders following the pattern `WeekXX/YY.<topicName>/`. The actual Python script files (`.py` files) are located inside the `src/` subfolders.
-
-To run a Python script, you have two options:
-
-### Option A: Run from the root folder
-You can provide the full path to the script from the root of the repository:
-```bash
-python WeekXX/YY.<topicName>/src/filename.py
-```
-*Example:*
-```bash
-python Week01/01.Introduction/src/hello_world.py
-```
-
-### Option B: Navigate to the folder first
-You can change your directory to the specific `src` folder, and then run the script directly:
-```bash
-cd WeekXX/YY.<topicName>/src/
-python filename.py
-```
-
-> **Note:** Some topic folders might not have a `src/` folder yet. These will be added as the course progresses!
+1. **Python 3.10+** (Python 3.14 recommended) installed on your system.
+2. **`uv`** installed (a modern, high-performance Python package and environment manager):
+   - **macOS / Linux:**
+     ```bash
+     curl -LsSf https://astral.sh/uv/install.sh | sh
+     ```
+   - **Windows (PowerShell):**
+     ```powershell
+     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+     ```
+3. A terminal that supports `make`:
+   - **macOS / Linux:** Built-in Terminal (if prompted on macOS, install developer tools using `xcode-select --install`).
+   - **Windows:** **Git Bash** (included with Git for Windows) or **WSL** (Windows Subsystem for Linux).
 
 ---
 
-## 4. Automated Validation & Execution via Makefile
+## 2. Quickstart with `make` (Recommended Approach)
 
-To help ensure your code is error-free, well-commented, and produces the expected outputs across all 12 weeks, automated checking and execution tools are available via `make`.
+All commands are run from the root folder of this repository (`ACU-ITEC102`).
 
-Make sure `uv` is installed, then run the commands from the root directory:
+### Step 1: View Available Commands (`make help`)
+To see the full list of automated tasks:
+```bash
+make help
+```
+Output:
+```text
+Available commands in ACU-ITEC102:
+  make check         - Run all checks (check-py and check-ipynb) across Weeks 01-12
+  make check-py      - Validate comments and error-free execution of all .py files
+  make check-ipynb   - Validate structure and error-free execution of all .ipynb notebooks
+  make run           - Execute all Python scripts and Jupyter notebooks across Weeks 01-12
+  make run-py        - Execute all Python scripts and display program output
+  make run-ipynb     - Execute all Jupyter notebooks and display output
+  make venv          - Create and provision the .venv virtual environment using uv
+  make clean         - Clean up working virtual environment (.venv) and Python caches
+  make distclean     - Full reset: run clean and delete .venv_global (alias: clean-all)
+  make clean-all     - Alias for make distclean
 
-### Running Code Quality Checks (`make check`)
+Tip: Run for a specific week with WEEK=WeekXX (e.g., make check-py WEEK=Week04)
+```
 
-- **Run all checks** (both Python scripts and Jupyter notebooks across Weeks 01-12):
+---
+
+### Step 2: Set Up the Environment (`make venv`)
+Provision the course virtual environment with all required packages (Jupyter, Pandas, Matplotlib, NumPy, etc.) with one command:
+```bash
+make venv
+```
+> **What this does automatically:**
+> - Creates a isolated `.venv` environment using `uv`.
+> - Installs all necessary dependencies from `requirements.txt` (or links to `.venv_global` if present).
+> - No manual `python -m venv` or individual `pip install` commands required!
+
+---
+
+### Step 3: Run Code Quality Checks (`make check`)
+Before submitting your work, run automated checks to ensure your code is error-free and well-commented:
+
+* **Check everything across Weeks 01–12:**
   ```bash
   make check
   ```
-
-- **Check only Python files** (`<root>WeekXX/**/src/*.py`):
-  Ensures all scripts contain educational comments/docstrings and run without errors:
+* **Check only Python scripts (`.py`):**
+  Validates syntax, ensures required educational comments/docstrings are present, and tests execution:
   ```bash
   make check-py
   ```
-
-- **Check only Jupyter Notebooks** (`<root>WeekXX/**/notebooks/*.ipynb`):
-  Ensures all notebooks contain explanatory markdown cells and execute error-free:
+* **Check only Jupyter Notebooks (`.ipynb`):**
+  Ensures notebooks have explanatory markdown cells and execute without runtime errors:
   ```bash
   make check-ipynb
   ```
+* **Check a specific week only:**
+  Add `WEEK=WeekXX` to filter:
+  ```bash
+  make check-py WEEK=Week04
+  make check-ipynb WEEK=Week04
+  ```
 
-### Executing Files & Inspecting Outputs (`make run`)
+---
 
-- **Execute all scripts and notebooks across Weeks 01-12**:
+### Step 4: Execute Scripts and Notebooks (`make run`)
+
+* **Run all Python scripts and notebooks across the course:**
   ```bash
   make run
   ```
-
-- **Execute only Python scripts**:
+* **Run only Python scripts and see output:**
   ```bash
   make run-py
   ```
-
-- **Execute only Jupyter notebooks**:
+* **Run only a specific week:**
   ```bash
-  make run-ipynb
+  make run-py WEEK=Week01
+  make run-ipynb WEEK=Week06
   ```
 
-### Running Checks for a Specific Week
+---
 
-You can filter checks or runs for a single week by providing the `WEEK` variable:
+### Step 5: Clean Up (`make clean` vs `make distclean`)
 
-```bash
-# Check only Week 04 Python scripts
-make check-py WEEK=Week04
+* **Standard cleanup (`make clean`):**
+  Removes temporary working environments (`.venv`), Python `__pycache__` directories, `.pytest_cache`, and checkpoint files while preserving the global package cache for fast subsequent runs:
+  ```bash
+  make clean
+  ```
+* **Full reset (`make distclean` or `make clean-all`):**
+  Runs `make clean` and also deletes `.venv_global` for a complete, from-scratch reset:
+  ```bash
+  make distclean
+  # or
+  make clean-all
+  ```
 
-# Check only Week 04 Jupyter Notebooks
-make check-ipynb WEEK=Week04
+---
 
-# Run only Week 07 scripts
-make run-py WEEK=Week07
-```
+## 3. Why Use `make` Instead of Raw Python Commands?
 
+Here is a side-by-side comparison of common workflows:
+
+| Task | With `make` (Recommended) | Traditional / Raw Python Commands |
+| :--- | :--- | :--- |
+| **Create Environment** | `make venv` | `python3 -m venv venv` |
+| **Activate Environment** | *Automatic* in all `make` targets | `source venv/bin/activate` *(macOS/Linux)*<br>`venv\Scripts\activate` *(Windows)* |
+| **Install Dependencies** | *Automatic* via `make venv` | `pip install -r requirements.txt` |
+| **Validate Code & Comments** | `make check-py WEEK=Week03` | Manually inspect files and run each script |
+| **Run All Exercises** | `make run-py WEEK=Week02` | Manually run each `.py` file one by one |
+| **Clean Caches & Build Files** | `make clean` | Manually search and delete `__pycache__`, `.pytest_cache`, etc. |
+
+---
+
+## 4. Interactive Jupyter Notebooks
+
+When you want to open and interactively edit `.ipynb` notebooks in your browser:
+
+1. **Activate the project environment:**
+   - **macOS / Linux:**
+     ```bash
+     source .venv/bin/activate
+     ```
+   - **Windows (Git Bash):**
+     ```bash
+     source .venv/Scripts/activate
+     ```
+2. **Launch Jupyter:**
+   ```bash
+   jupyter notebook
+   ```
+   *(or `jupyter lab`)*
+3. In the browser interface, navigate to the topic notebook (e.g., `Week01/01.Introduction/notebooks/...`).
+4. Verify that the notebook kernel is set to **Python (.venv)**.
+
+---
+
+## 5. Alternative: Running Individual Python Scripts Manually (Reference)
+
+If you need to test or debug an individual Python script directly:
+
+1. Activate your environment:
+   ```bash
+   source .venv/bin/activate   # macOS / Linux
+   ```
+2. Run the script using its path from the root directory:
+   ```bash
+   python Week01/01.Introduction/src/hello_world.py
+   ```
+   *(Or navigate into the subfolder: `cd Week01/01.Introduction/src && python hello_world.py`)*

@@ -6,6 +6,7 @@ alone can be deceptive and introduces the core Object-Oriented anatomy of Matplo
 """
 
 import os
+from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")  # Non-interactive headless backend for script execution
 import matplotlib.pyplot as plt
@@ -88,10 +89,10 @@ def demonstrate_anscombe_plot(quartet: list[tuple[np.ndarray, np.ndarray]]) -> p
         ax.set_ylim(2, 14)
 
     plt.tight_layout()
-    output_path = "anscombes_quartet.png"
+    output_path = Path(__file__).resolve().parent / "anscombes_quartet.png"
     fig.savefig(output_path, dpi=150)
     plt.close(fig)
-    print(f"Generated and saved chart: {output_path}")
+    print(f"Generated and saved chart: {output_path.name}")
     return fig
 
 
@@ -128,9 +129,10 @@ def run_exercises():
     ax.legend()
     plt.tight_layout()
 
-    fig.savefig("student_study_hours_outlier.png", dpi=150)
+    outlier_plot_path = Path(__file__).resolve().parent / "student_study_hours_outlier.png"
+    fig.savefig(outlier_plot_path, dpi=150)
     plt.close(fig)
-    print("  Saved plot: student_study_hours_outlier.png")
+    print(f"  Saved plot: {outlier_plot_path.name}")
 
 
 def main():

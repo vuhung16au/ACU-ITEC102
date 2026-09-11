@@ -1,7 +1,7 @@
 # ACU-ITEC102 Course Code Validation and Execution Makefile
 # Designed for 1st year Computer Science students learning Python programming.
 
-.PHONY: help venv check check-py check-ipynb run run-py run-ipynb clean
+.PHONY: help venv check check-py check-ipynb run run-py run-ipynb clean distclean clean-all
 
 UV ?= uv
 VENV ?= .venv
@@ -17,7 +17,9 @@ help:
 	@echo "  make run-py        - Execute all Python scripts and display program output"
 	@echo "  make run-ipynb     - Execute all Jupyter notebooks and display output"
 	@echo "  make venv          - Create and provision the .venv virtual environment using uv"
-	@echo "  make clean         - Clean up virtual environments and Python cache files"
+	@echo "  make clean         - Clean up working virtual environment (.venv) and Python caches"
+	@echo "  make distclean     - Full reset: run clean and delete .venv_global (alias: clean-all)"
+	@echo "  make clean-all     - Alias for make distclean"
 	@echo ""
 	@echo "Tip: Run for a specific week with WEEK=WeekXX (e.g., make check-py WEEK=Week04)"
 
@@ -64,3 +66,11 @@ clean:
 	@find . -type d -name "build" -prune -exec rm -rf {} +
 	@find . -type d -name "dist" -prune -exec rm -rf {} +
 	@echo "Cleanup complete."
+
+distclean: clean
+	@echo "Removing global shared virtual environment (.venv_global)..."
+	@rm -rf .venv_global
+	@echo "Full distribution clean complete."
+
+clean-all: distclean
+

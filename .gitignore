@@ -151,6 +151,8 @@ activemq-data/
 .env*
 .envrc
 .venv
+.venv*/
+.venv_global/
 env/
 venv/
 ENV/
@@ -237,3 +239,4 @@ cleaned_weather_export.csv
 sydney_weather.csv
 large_dataset.csv.gz
 Week04/05.File_Handling/src/cities.txt
+Week04/05.File_Handling/notebooks/cities.txt
