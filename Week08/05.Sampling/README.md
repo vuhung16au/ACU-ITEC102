@@ -1,10 +1,24 @@
-# Sampling
+# Data Sampling
 
-This folder contains materials, documentation, and exercises for Sampling.
+This module covers drawing random and stratified sample subsets from Pandas DataFrames using `df.sample()` and `df.groupby().sample()`.
 
-## Structure
-- `docs/`: Explanations and key concepts.
-- `notebooks/`: Interactive Jupyter Notebooks.
-- `src/`: Python source code scripts.
-- `QUICKSTART.md`: Quick setup guide.
-- `Makefile`: Commands to run and clean the environment.
+---
+
+## Learning Objectives
+- Extract random sample subsets by row count (`n`) and proportion (`frac`).
+- Enforce reproducible results using the `random_state` seed parameter.
+- Understand sampling with and without replacement (`replace=True/False`).
+- Implement stratified sampling to prevent subgroup representation bias.
+- Construct train/test validation splits.
+
+---
+
+## Folder Structure
+- `docs/`: Conceptual documentation on sampling theory, random seeds, and stratification.
+- `notebooks/`:
+  - `05-sampling.ipynb`: Interactive notebook with code and practice exercises.
+  - `messy_student_data.csv`: Sample dataset of 100 student records.
+- `src/`:
+  - `Sampling.py`: Runnable Python script illustrating all concepts and solutions.
+- `QUICKSTART.md`: Setup and execution guide.
+- `Makefile`: Commands to launch Jupyter (`make run`) and clean up (`make clean`).
