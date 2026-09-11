@@ -220,3 +220,20 @@ __marimo__/
 TODOs/
 
 .DS_Store
+
+# Generated outputs from running Python scripts and Jupyter Notebooks
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+!**/images/*
+
+# Generated data exports and temporary outputs from notebook exercises
+city_weather_summary.csv
+hot_weather_report.csv
+hot_weather_report.json
+cleaned_weather_export.csv
+sydney_weather.csv
+large_dataset.csv.gz
+Week04/05.File_Handling/src/cities.txt

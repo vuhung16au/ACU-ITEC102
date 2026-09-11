@@ -45,7 +45,7 @@ def main():
 
     # Adding and removing elements
     fruits.append("orange")
-    fruits.remove("apple")
+    fruits.remove("blueberry")
     print(f"List after adding and removing: {fruits}")
 
     print("\n--- Example: Amazon Shopping Cart ---")

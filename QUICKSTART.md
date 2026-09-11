@@ -86,3 +86,63 @@ python filename.py
 ```
 
 > **Note:** Some topic folders might not have a `src/` folder yet. These will be added as the course progresses!
+
+---
+
+## 4. Automated Validation & Execution via Makefile
+
+To help ensure your code is error-free, well-commented, and produces the expected outputs across all 12 weeks, automated checking and execution tools are available via `make`.
+
+Make sure `uv` is installed, then run the commands from the root directory:
+
+### Running Code Quality Checks (`make check`)
+
+- **Run all checks** (both Python scripts and Jupyter notebooks across Weeks 01-12):
+  ```bash
+  make check
+  ```
+
+- **Check only Python files** (`<root>WeekXX/**/src/*.py`):
+  Ensures all scripts contain educational comments/docstrings and run without errors:
+  ```bash
+  make check-py
+  ```
+
+- **Check only Jupyter Notebooks** (`<root>WeekXX/**/notebooks/*.ipynb`):
+  Ensures all notebooks contain explanatory markdown cells and execute error-free:
+  ```bash
+  make check-ipynb
+  ```
+
+### Executing Files & Inspecting Outputs (`make run`)
+
+- **Execute all scripts and notebooks across Weeks 01-12**:
+  ```bash
+  make run
+  ```
+
+- **Execute only Python scripts**:
+  ```bash
+  make run-py
+  ```
+
+- **Execute only Jupyter notebooks**:
+  ```bash
+  make run-ipynb
+  ```
+
+### Running Checks for a Specific Week
+
+You can filter checks or runs for a single week by providing the `WEEK` variable:
+
+```bash
+# Check only Week 04 Python scripts
+make check-py WEEK=Week04
+
+# Check only Week 04 Jupyter Notebooks
+make check-ipynb WEEK=Week04
+
+# Run only Week 07 scripts
+make run-py WEEK=Week07
+```
+
