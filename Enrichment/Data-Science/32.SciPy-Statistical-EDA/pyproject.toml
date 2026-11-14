@@ -1,0 +1,18 @@
+[project]
+name = "scipy-statistical-eda"
+version = "0.1.0"
+description = "An educational enrichment project demonstrating Exploratory Data Analysis (EDA), hypothesis testing, random split simulations, and correlation matrices using SciPy and Seaborn."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.10.0",
+    "numpy>=2.2.0",
+    "pandas>=2.3.0",
+    "scipy>=1.15.0",
+    "seaborn>=0.13.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+]
